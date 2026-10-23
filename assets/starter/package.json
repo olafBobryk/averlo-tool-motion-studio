@@ -1,0 +1,22 @@
+{
+  "name": "motion-studio-project",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "render": "npm run check:geometry && npm run check:visibility && node render.mjs",
+    "still": "node render.mjs --still",
+    "check:geometry": "node scripts/check-geometry.mjs",
+    "test:geometry": "node scripts/check-geometry.mjs --self-test",
+    "check:visibility": "node scripts/check-visibility.mjs",
+    "test:visibility": "node scripts/check-visibility.mjs --self-test"
+  },
+  "dependencies": {
+    "@remotion/bundler": "4.0.534",
+    "@remotion/renderer": "4.0.534",
+    "remotion": "4.0.534",
+    "react": "19.2.0",
+    "react-dom": "19.2.0",
+    "three": "0.186.0",
+    "esbuild": "0.28.1"
+  }
+}

@@ -1,0 +1,4 @@
+interface:
+  display_name: "Motion Studio"
+  short_description: "Continuous Three.js motion, studio light and spatial darkness"
+  default_prompt: "Use $averlo-motion-studio to create a Three.js showcase with continuous choreography and spatial darkness."

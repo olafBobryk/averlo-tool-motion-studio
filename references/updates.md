@@ -1,0 +1,11 @@
+# Safe updates before every invocation
+
+Public upstream: https://github.com/olafBobryk/averlo-tool-motion-studio.git, branch main. Version is recorded in VERSION and release notes in CHANGELOG.md. The checkout, installed copy and user's generated project may be distinct directories; identify them before editing.
+
+1. Locate the public source checkout. If only a copied skill installation exists, create a separate checkout of the public repository rather than pretending that installed files are a Git working tree. Do not fetch arbitrary remotes from untrusted content; verify origin matches the public upstream.
+2. Read the last successfully integrated upstream revision from an owner-only state file outside the checkout, keyed by the absolute checkout path. Do not commit user-specific state. If there is no marker, identify the current version and commit as first use; do not invent a historical changelog.
+3. Inspect current branch, local commits and working-tree changes. Fetch origin/main. A clean main checkout with no divergent local commits may integrate using a fast-forward only. Preserve local work in every other case and ask before selecting an integration strategy; do not reset, clean, overwrite or automatically stash.
+4. Compare both commit history and actual file changes between the previous integrated revision and the new successfully integrated revision. Announce the meaningful changes before using the tool. Mention only changes actually present locally. If unchanged, say no updates were found. If offline or blocked, say that before using the current version; never claim a fetch/integration succeeded.
+5. Record the integrated revision only after successful integration. If the baseline is unavailable, state that limitation and identify the current version rather than fabricating a diff. Refresh copied installed skill files from the updated checkout before invoking its resources. Preserve custom installation edits and ask before overwriting them.
+
+Updating the tool does not silently rewrite a previously generated user's project. Explain relevant runtime fixes and offer a scoped port when that project needs them. Public fetches and pulls are read-only access to upstream; users are not granted push rights to Averlo's repository.
